@@ -12,8 +12,9 @@ DB_NAME = os.getenv('DB_NAME', 'teste')
 DB_USER = os.getenv('DB_USER', 'postgres')
 DB_PASS = os.getenv('DB_PASS', '8800')
 
+#Conecção ao banco de dados PostgreSQL
 def connect_db():
-    """Conecção ao banco de dados PostgreSQL"""
+    
     try:
         conn = psycopg2.connect(
             host=DB_HOST,
@@ -25,13 +26,12 @@ def connect_db():
     except psycopg2.OperationalError as e:
         print(f'Erro ao conectar ao banco de dados: {e}')
         return None
-
-def insert_data(titulo, link, source):
-    """Insere dados no banco de dados."""
+        
+#Insere dados no banco de dados.
+def insert_data(titulo, link, source):   
     conn = connect_db()
     if conn is None:
-        return  # Não prosseguir se a conexão falhar
-
+        return  
     try:
         with conn.cursor() as cursor:
             table = f"noticias_{source}"
@@ -51,14 +51,10 @@ def insert_data(titulo, link, source):
     finally:
         conn.close()
 
-
-
-
 def scrape(url, title_selector, source):
     # Inicia um display virtual para rodar o Firefox sem interface gráfica
     display = Display(visible=0, size=(1024, 768))
     display.start()
-
     try:
         with webdriver.Firefox() as navegador:
             navegador.get(url)
@@ -77,7 +73,6 @@ def scrape(url, title_selector, source):
                     insert_data(titulo, link, source)
                 else:
                     print("Título ou link não encontrados.")
-
     finally:
         display.stop()
 
