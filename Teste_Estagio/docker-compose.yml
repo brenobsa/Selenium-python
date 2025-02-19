@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=postgres
+      - DB_PASS=8800
+      - DB_NAME=teste
+
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 8800
+      POSTGRES_DB: teste
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - .:/app
+
+volumes:
+  db_data:
