@@ -14,7 +14,6 @@ DB_PASS = os.getenv('DB_PASS', '8800')
 
 #Conecção ao banco de dados PostgreSQL
 def connect_db():
-    
     try:
         conn = psycopg2.connect(
             host=DB_HOST,
@@ -51,6 +50,7 @@ def insert_data(titulo, link, source):
     finally:
         conn.close()
 
+#Coleta de dados.
 def scrape(url, title_selector, source):
     # Inicia um display virtual para rodar o Firefox sem interface gráfica
     display = Display(visible=0, size=(1024, 768))
