@@ -39,8 +39,8 @@ Antes de começar, você precisará ter o seguinte instalado em sua máquina:
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
-   cd seu_repositorio
+   git clone https://github.com/brenobsa/Selenium-python.git
+   cd Selenium-python/Teste_Estagio
    
 2. **Instale as dependências:**
     ```
