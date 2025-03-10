@@ -41,8 +41,13 @@ Antes de começar, você precisará ter o seguinte instalado em sua máquina:
    ```bash
    git clone git@github.com:brenobsa/Selenium-python.git
    cd Selenium-python/Teste_Estagio
-   
-2. **Instale as dependências:**
+2. **Acessando a Pasta:**
+   Primeiro, verifique o diretório atual em que você está localizado usando o comando pwd. Em seguida, liste os arquivos e pastas presentes no diretório com o comando ls para garantir que você está no caminho correto. Após confirmar que a pasta Teste_Estagio está presente, acesse-a utilizando o comando cd:
+    ```
+    pwd
+    ls
+    cd Teste_Estagio 
+3. **Instale as dependências:**
     ```
     pip install -r requirements.txt
 
