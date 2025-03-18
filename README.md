@@ -56,7 +56,8 @@ Antes de começar, você precisará ter o seguinte instalado em sua máquina:
 1. **Inicie os contêineres:**
 Use o Docker Compose para iniciar os contêineres:
     ```bash
-    docker-compose up --build
+    docker-compose up --build #Executando a aplicação
+    docker-compose up --no-start #Sem inicializar a aplicação
 
 2. **Acesso ao banco de dados e criação das Tabelas:**
 
