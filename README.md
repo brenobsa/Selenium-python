@@ -69,6 +69,7 @@ Use o Docker Compose para iniciar os contêineres:
 - Para executar a Criação das tabelas:
     ```bash 
     \i /app/create_table.sql
+    \dt #Verificar a criação das tabelas
     \q #Para sair do banco
 
 3. **Executar o Script de Coleta de Dados**:
